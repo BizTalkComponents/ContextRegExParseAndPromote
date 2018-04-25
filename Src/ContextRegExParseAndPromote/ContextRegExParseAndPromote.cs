@@ -82,10 +82,10 @@ namespace BizTalkComponents.PipelineComponents.ContextRegExParseAndPromote
 
         public void Load(IPropertyBag propertyBag, int errorLog)
         {
-            PropertyToParse = PropertyBagHelper.ReadPropertyBag<string>(propertyBag, PropertyToParsePropertyName);
-            RegExPattern = PropertyBagHelper.ReadPropertyBag<string>(propertyBag, RegExPatternPropertyName);
-            DestinationProperty = PropertyBagHelper.ReadPropertyBag<string>(propertyBag, DestinationPropertyPropertyName);
-            ThrowIfNoMatch = PropertyBagHelper.ReadPropertyBag<bool>(propertyBag, ThrowIfNoMatchPropertyName);
+            PropertyToParse = PropertyBagHelper.ReadPropertyBag(propertyBag, PropertyToParsePropertyName, PropertyToParse);
+            RegExPattern = PropertyBagHelper.ReadPropertyBag(propertyBag, RegExPatternPropertyName, RegExPattern);
+            DestinationProperty = PropertyBagHelper.ReadPropertyBag(propertyBag, DestinationPropertyPropertyName, DestinationProperty);
+            ThrowIfNoMatch = PropertyBagHelper.ReadPropertyBag(propertyBag, ThrowIfNoMatchPropertyName, ThrowIfNoMatch);
         }
 
         public void Save(IPropertyBag propertyBag, bool clearDirty, bool saveAllProperties)
